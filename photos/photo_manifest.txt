@@ -1,0 +1,64 @@
+APPARATUS FEATURED PHOTOS — save each manufacturer photo with this exact filename
+Put all files in a folder named "photos" next to the HTML file.
+Best format: JPG, landscape, ~1200px wide. Cards crop to 4:3.
+
+Arri Alexa 35
+  -> photos/arri-alexa-35.jpg
+
+Arri Alexa mini LF
+  -> photos/arri-alexa-mini-lf.jpg
+
+Phantom Flex 4k
+  -> photos/phantom-flex-4k.jpg
+
+Tribe 7 Blackwing7 T-Tuned
+  -> photos/tribe-7-blackwing7-t-tuned.jpg
+
+Leica R Cinescope TLS Rehoused
+  -> photos/leica-r-cinescope-tls-rehoused.jpg
+
+Venus Optics Laowa T8
+  -> photos/venus-optics-laowa-t8.jpg
+
+FUJINON Cabrio Zoom Lens
+  -> photos/fujinon-cabrio-zoom-lens.jpg
+
+ARRI Signature Zoom 65-300mm
+  -> photos/arri-signature-zoom-65-300mm.jpg
+
+ARRI Hi-5 Hand Unit Set
+  -> photos/arri-hi-5-hand-unit-set.jpg
+
+OConnor Ultimate 2575D
+  -> photos/oconnor-ultimate-2575d.jpg
+
+Astera Titan Tube
+  -> photos/astera-titan-tube.jpg
+
+Arri Skypanel s360
+  -> photos/arri-skypanel-s360.jpg
+
+Aputure Electro Storm CS15
+  -> photos/aputure-electro-storm-cs15.jpg
+
+Nova P600C Kit
+  -> photos/nova-p600c-kit.jpg
+
+Nodo Inertial wheels
+  -> photos/nodo-inertial-wheels.jpg
+
+DJI Ronin 2
+  -> photos/dji-ronin-2.jpg
+
+EasyRig Vario 5
+  -> photos/easyrig-vario-5.jpg
+
+Matthews Master Mount System
+  -> photos/matthews-master-mount-system.jpg
+
+Q-Take Equipment Set
+  -> photos/q-take-equipment-set.jpg
+
+Vaxis STORM 5000
+  -> photos/vaxis-storm-5000.jpg
+
