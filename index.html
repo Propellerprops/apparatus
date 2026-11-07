@@ -34,13 +34,17 @@
   .hero{min-height:100vh;display:flex;flex-direction:column;
     align-items:center;justify-content:center;overflow:hidden;position:relative;}
   .hero-logo{overflow:visible;}
-  .hero-logo .lp{fill:#101011;transition:fill .55s ease;}
-  .hero-logo .lp.on{fill:#f0f0f0;}
+  .hero-logo .lp{fill:#131314;transition:fill .09s ease;}
+  .hero-logo.lit .lp{fill:#f0f0f0;}
+  #sbface{fill:#26262a;transition:fill .07s ease;}
+  .hero-logo.lit #sbface{fill:#fff3dc;}
+  #cone{opacity:0;transition:opacity .09s ease;}
+  .hero-logo.lit #cone{opacity:1;}
   @keyframes subIn{to{opacity:1;transform:none;}}
   .hero-logo{width:min(74vw,760px);color:var(--paper);will-change:transform;}
   .hero-logo .lp{will-change:transform,opacity;}
   .hero-sub{margin-top:34px;text-align:center;opacity:0;transform:translateY(24px);
-    animation:subIn .9s ease 2.6s forwards;}
+    animation:subIn .9s ease 1.8s forwards;}
   .hero-sub .eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;}
   .hero-sub h1{font-size:clamp(20px,3.4vw,34px);font-weight:400;margin-top:14px;letter-spacing:.5px;}
   .hero-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
@@ -75,7 +79,8 @@
 
   @media (prefers-reduced-motion: reduce){
     .hero-logo .lp{fill:#f0f0f0!important;transition:none;}
-    #beamg{display:none;}
+    #cone{transition:none;}
+    #sbface{transition:none;}
     .hero-sub{animation:none;opacity:1;transform:none;}
     .rv{opacity:1;transform:none;transition:none;}
   }
@@ -91,7 +96,7 @@
 </header>
 
 <section class="hero">
-    <svg class="hero-logo" id="heroLogo" viewBox="546 748 828 120" role="img" aria-label="Apparatus logo"><defs><filter id="beamblur" x="-120%" y="-500%" width="340%" height="1100%"><feGaussianBlur stdDeviation="22"/></filter><radialGradient id="warm"><stop offset="0" stop-color="#fff3dc"/><stop offset="0.5" stop-color="#ffd9a0" stop-opacity="0.75"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient><mask id="cuts"><path d="M 640.7 805.3 L 640.7 805.3 L 640.6 805.3 L 640.6 805.2 L 640.6 805.2 L 640.5 805.2 L 640.5 805.2 L 640.5 805.2 L 585.1 764.1 L 582.1 773.5 L 582.1 773.5 L 582.1 773.5 L 582.2 773.5 L 582.2 773.5 L 645.4 820.4 L 640.8 805.2 L 640.8 805.2 L 640.7 805.3 L 640.7 805.3 Z M 696.7 826.2 L 696.7 826.2 L 696.7 826.2 L 696.7 826.7 L 706.0 826.2 L 706.0 826.2 L 706.0 763.7 L 696.7 763.7 L 696.7 826.2 Z M 780.7 826.7 L 790.0 826.2 L 790.0 826.2 L 790.0 763.7 L 780.7 763.7 L 780.7 826.7 Z M 746.7 786.2 L 746.8 786.3 L 746.8 786.3 L 746.8 786.3 L 746.8 786.3 L 746.9 786.3 L 746.9 786.4 L 746.9 786.4 L 746.9 786.4 L 780.3 853.9 L 780.3 832.6 L 780.3 832.6 L 780.3 832.6 L 780.3 832.6 L 780.2 832.6 L 780.2 832.5 L 780.2 832.5 L 780.1 832.5 L 780.1 832.5 L 780.1 832.5 L 780.1 832.4 L 780.0 832.4 L 780.0 832.4 L 746.6 764.9 L 746.6 786.2 L 746.6 786.2 L 746.7 786.2 L 746.7 786.2 L 746.7 786.2 Z M 864.6 801.9 L 864.6 801.9 L 864.6 801.8 L 864.6 801.8 L 864.6 801.8 L 864.6 801.7 L 864.7 801.7 L 864.7 801.7 L 864.7 801.7 L 887.7 776.9 L 887.7 776.8 L 887.8 776.8 L 887.8 776.8 L 887.8 776.8 L 887.9 776.8 L 884.3 766.9 L 822.9 833.0 L 822.9 833.0 L 822.9 833.1 L 822.8 833.1 L 822.8 833.1 L 822.8 833.1 L 822.7 833.1 L 822.7 833.1 L 822.7 833.1 L 822.6 833.1 L 822.6 833.1 L 822.6 833.1 L 822.6 833.1 L 816.2 854.0 L 856.9 810.1 L 856.9 810.0 L 856.9 810.0 L 857.0 810.0 L 857.0 810.0 L 857.0 810.0 L 857.1 810.0 L 857.1 810.0 L 857.1 810.0 L 857.2 810.0 L 857.2 810.0 L 857.2 810.0 L 857.3 810.0 L 857.3 810.0 L 857.3 810.0 L 857.4 810.0 L 857.4 810.1 L 857.4 810.1 L 857.4 810.1 L 857.5 810.1 L 857.5 810.2 L 857.5 810.2 L 871.6 854.6 L 871.6 854.7 L 871.6 854.7 L 871.6 854.7 L 871.6 854.7 L 881.4 854.7 L 864.6 802.0 L 864.6 802.0 L 864.6 801.9 L 864.6 801.9 Z M 934.9 854.6 L 949.3 815.8 L 949.3 815.8 L 949.3 815.7 L 949.3 815.7 L 949.3 815.7 L 941.8 809.1 L 924.9 854.7 L 934.9 854.7 L 934.9 854.7 L 934.9 854.7 L 934.9 854.6 L 934.9 854.6 Z M 560.1 843.8 L 560.0 843.8 L 560.0 843.8 L 560.0 843.8 L 559.9 843.8 L 556.6 854.3 L 648.5 830.1 L 645.7 821.3 L 645.7 821.3 L 560.1 843.8 L 560.1 843.8 L 560.1 843.8 Z M 1123.7 764.0 L 1123.7 764.0 L 1123.7 763.9 L 1123.7 763.9 L 1123.7 763.9 L 1123.6 763.9 L 1123.6 763.8 L 1123.6 763.8 L 1123.6 763.8 L 1123.6 763.7 L 1104.5 763.7 L 1162.9 797.4 L 1162.9 786.6 L 1123.8 764.0 L 1123.8 764.0 L 1123.7 764.0 Z M 1285.5 819.4 L 1285.6 819.4 L 1285.6 819.4 L 1285.6 819.5 L 1328.6 854.0 L 1328.6 792.9 L 1328.6 792.8 L 1328.6 792.8 L 1328.6 792.8 L 1328.6 792.7 L 1328.6 792.7 L 1328.6 792.7 L 1328.7 792.7 L 1328.7 792.6 L 1328.7 792.6 L 1328.7 792.6 L 1328.8 792.6 L 1328.8 792.6 L 1328.8 792.5 L 1328.9 792.5 L 1328.9 792.5 L 1328.9 792.5 L 1329.0 792.5 L 1329.0 792.5 L 1329.0 792.6 L 1329.1 792.6 L 1329.1 792.6 L 1329.1 792.6 L 1329.2 792.6 L 1362.5 822.4 L 1362.5 799.1 L 1362.4 799.1 L 1362.4 799.1 L 1362.4 799.1 L 1362.3 799.0 L 1362.3 799.0 L 1362.3 799.0 L 1362.2 799.0 L 1319.3 764.5 L 1319.3 825.6 L 1319.3 825.6 L 1319.3 825.6 L 1319.3 825.7 L 1319.3 825.7 L 1319.2 825.7 L 1319.2 825.8 L 1319.2 825.8 L 1319.2 825.8 L 1319.2 825.8 L 1319.1 825.9 L 1319.1 825.9 L 1319.1 825.9 L 1319.0 825.9 L 1319.0 825.9 L 1319.0 825.9 L 1318.9 825.9 L 1318.9 825.9 L 1318.9 825.9 L 1318.8 825.9 L 1318.8 825.9 L 1318.8 825.9 L 1318.7 825.9 L 1318.7 825.8 L 1285.4 796.0 L 1285.4 819.4 L 1285.4 819.4 L 1285.5 819.4 L 1285.5 819.4 L 1285.5 819.4 Z M 1046.9 784.1 L 1046.9 784.1 L 1047.0 784.0 L 1047.0 784.0 L 1047.0 784.0 L 1047.0 784.0 L 1047.0 783.9 L 1047.1 783.9 L 1047.1 783.9 L 1047.1 783.9 L 1047.2 783.9 L 1047.2 783.9 L 1047.2 783.9 L 1047.3 783.9 L 1047.3 783.9 L 1047.3 783.9 L 1047.4 783.9 L 1047.4 783.9 L 1047.4 783.9 L 1047.5 783.9 L 1047.5 783.9 L 1047.5 784.0 L 1047.5 784.0 L 1047.6 784.0 L 1096.9 854.5 L 1096.9 854.6 L 1096.9 854.6 L 1097.0 854.6 L 1097.0 854.7 L 1097.0 854.7 L 1097.0 854.7 L 1097.0 854.7 L 1108.4 854.7 L 1044.8 763.9 L 1044.8 763.9 L 1044.8 763.9 L 1044.8 763.8 L 1044.8 763.8 L 1044.8 763.8 L 1044.8 763.7 L 1044.8 763.7 L 1037.6 763.7 L 1037.6 854.7 L 1037.6 854.7 L 1046.9 854.7 L 1046.9 784.2 L 1046.9 784.2 L 1046.9 784.1 L 1046.9 784.1 Z M 1196.2 818.8 L 1196.2 818.8 L 1196.2 818.8 L 1196.1 818.8 L 1196.1 818.8 L 1196.1 818.8 L 1196.0 818.8 L 1196.0 833.7 L 1228.0 794.7 L 1228.0 794.7 L 1221.4 788.2 L 1196.3 818.7 L 1196.3 818.7 L 1196.2 818.8 L 1196.2 818.8 Z M 1122.8 805.3 L 1122.9 805.3 L 1122.9 805.3 L 1122.9 805.3 L 1122.9 805.4 L 1123.0 805.4 L 1123.0 805.4 L 1157.4 854.5 L 1157.4 854.6 L 1157.4 854.6 L 1157.4 854.6 L 1157.4 854.6 L 1157.4 854.7 L 1157.4 854.7 L 1157.4 854.7 L 1162.9 854.7 L 1162.9 846.0 L 1162.9 846.0 L 1162.9 846.0 L 1162.8 846.0 L 1162.8 846.0 L 1162.8 846.0 L 1162.7 846.0 L 1162.7 845.9 L 1162.7 845.9 L 1162.7 845.9 L 1162.6 845.9 L 1129.3 798.2 L 1122.7 798.2 L 1122.7 805.3 L 1122.7 805.3 L 1122.8 805.3 L 1122.8 805.3 L 1122.8 805.3 Z M 968.3 826.5 L 968.3 826.5 L 968.3 828.2 L 974.4 825.9 L 971.5 826.4 L 971.5 826.4 L 968.3 826.5 Z M 1237.9 857.0 L 1237.9 857.0 L 1237.9 856.9 L 1237.9 856.9 L 1237.9 856.9 L 1237.9 856.8 L 1237.9 795.3 L 1228.6 804.4 L 1228.6 856.8 L 1228.6 856.9 L 1228.6 856.9 L 1228.6 856.9 L 1228.6 857.0 L 1228.6 857.0 L 1228.6 857.0 L 1228.5 857.0 L 1233.3 860.3 L 1233.3 860.3 L 1238.0 857.0 L 1238.0 857.0 L 1237.9 857.0 Z" fill="white" fill-rule="evenodd"/></mask></defs><g id="beamg" mask="url(#cuts)"><ellipse id="beam" cx="420" cy="808" rx="190" ry="120" fill="url(#warm)" filter="url(#beamblur)" opacity="0"/></g>
+    <svg class="hero-logo" id="heroLogo" viewBox="546 520 828 370" role="img" aria-label="Apparatus logo lit by a softbox"><defs><linearGradient id="conegrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0d2" stop-opacity="0.85"/><stop offset="0.75" stop-color="#ffe3b0" stop-opacity="0.22"/><stop offset="1" stop-color="#ffe3b0" stop-opacity="0"/></linearGradient><filter id="conesoft" x="-30%" y="-20%" width="160%" height="150%"><feGaussianBlur stdDeviation="16"/></filter></defs><g id="rig" stroke="#4a4a4c" stroke-width="2" fill="none"><line x1="960" y1="540" x2="960" y2="562"/><line x1="960" y1="562" x2="906" y2="588"/><line x1="960" y1="562" x2="1014" y2="588"/></g><polygon id="sbbody" points="906,586 1014,586 1038,614 882,614" fill="#1b1b1d" stroke="#4a4a4c" stroke-width="2"/><rect id="sbface" x="878" y="614" width="164" height="12" rx="3"/><polygon id="cone" points="884,628 1036,628 1452,880 468,880" fill="url(#conegrad)" filter="url(#conesoft)"/>
       <g id="logopaths">
         <path class="lp" d="M 585.132812 763.734375 L 628.019531 763.734375 L 640.6875 804.90625 Z M 585.132812 763.734375" fill="currentColor" style="transform-box:fill-box;transform-origin:center"/>
         <path class="lp" d="M 645.621094 820.933594 L 560.046875 843.46875 L 581.992188 773.828125 Z M 645.621094 820.933594" fill="currentColor" style="transform-box:fill-box;transform-origin:center"/>
@@ -184,30 +189,33 @@
 (function(){
 var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 var hdr=document.getElementById('hdr');
-var shapes=[].slice.call(document.querySelectorAll('#heroLogo .lp'));
-var beam=document.getElementById('beam');
-var cxs=shapes.map(function(p){var b=p.getBBox();return b.x+b.width/2;});
-if(reduced||!beam){
-  shapes.forEach(function(p){p.classList.add('on');});
+var logo=document.getElementById('heroLogo');
+var running=false;
+function flicker(){
+  if(running)return; running=true;
+  var seq=[70,90,50,60,110,45];  // on,off,on,off,on,off ... then on
+  var t=0,on=true;
+  logo.classList.add('lit');
+  seq.forEach(function(d){
+    t+=d; on=!on;
+    var state=on;
+    setTimeout(function(){logo.classList.toggle('lit',state);},t);
+  });
+  setTimeout(function(){logo.classList.add('lit');running=false;},t+60);
+}
+if(reduced){
+  logo.classList.add('lit');
 }else{
-  var t0=null,D=2100,DELAY=400,X0=420,X1=1510;
-  function step(ts){
-    if(!t0)t0=ts;
-    var el=ts-t0-DELAY;
-    if(el<0){requestAnimationFrame(step);return;}
-    var t=Math.min(1,el/D);
-    var e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
-    var x=X0+(X1-X0)*e;
-    beam.setAttribute('cx',x);
-    var op=t<0.1?t/0.1:(t>0.9?(1-t)/0.1:1);
-    beam.setAttribute('opacity',(op).toFixed(2));
-    for(var i=0;i<shapes.length;i++){
-      if(x>cxs[i]+20&&!shapes[i].classList.contains('on'))shapes[i].classList.add('on');
-    }
-    if(t<1){requestAnimationFrame(step);}
-    else{shapes.forEach(function(p){p.classList.add('on');});beam.setAttribute('opacity','0');}
-  }
-  requestAnimationFrame(step);
+  setTimeout(flicker,450);
+  logo.addEventListener('pointerenter',flicker);
+  var away=false;
+  var io2=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(!e.isIntersecting){away=true;}
+      else if(away){away=false;logo.classList.remove('lit');setTimeout(flicker,200);}
+    });
+  },{threshold:0.5});
+  io2.observe(logo);
 }
 function onScroll(){hdr.classList.toggle('solid', window.scrollY>window.innerHeight*0.55);}
 window.addEventListener('scroll',onScroll,{passive:true});onScroll();
