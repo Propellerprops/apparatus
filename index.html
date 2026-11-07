@@ -36,9 +36,7 @@
   .hero-logo{overflow:visible;}
   .hero-logo .lp{fill:#131314;transition:fill .09s ease;}
   .hero-logo.lit .lp{fill:#f0f0f0;}
-  .sbf{fill:#26262a;transition:fill .07s ease;}
-  .hero-logo.lit .sbf{fill:#fff3dc;}
-  #cone{opacity:0;transition:opacity .09s ease;}
+    #cone{opacity:0;transition:opacity .09s ease;}
   .hero-logo.lit #cone{opacity:1;}
   @keyframes subIn{to{opacity:1;transform:none;}}
   .hero-logo{width:min(74vw,760px);color:var(--paper);will-change:transform;}
@@ -80,7 +78,6 @@
   @media (prefers-reduced-motion: reduce){
     .hero-logo .lp{fill:#f0f0f0!important;transition:none;}
     #cone{transition:none;}
-    .sbf{transition:none;}
     .hero-sub{animation:none;opacity:1;transform:none;}
     .rv{opacity:1;transform:none;transition:none;}
   }
@@ -102,7 +99,7 @@
 </header>
 
 <section class="hero">
-    <svg class="hero-logo" id="heroLogo" viewBox="546 520 828 370" role="img" aria-label="Apparatus logo lit by a softbox"><defs><linearGradient id="conegrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0d2" stop-opacity="0.85"/><stop offset="0.75" stop-color="#ffe3b0" stop-opacity="0.22"/><stop offset="1" stop-color="#ffe3b0" stop-opacity="0"/></linearGradient><filter id="conesoft" x="-30%" y="-20%" width="160%" height="150%"><feGaussianBlur stdDeviation="16"/></filter></defs><polygon id="cone" points="856,618 1064,618 1452,880 468,880" fill="url(#conegrad)" filter="url(#conesoft)"/><g id="rig" fill="none"><line x1="864" y1="510" x2="864" y2="562" stroke="#3a3a3c" stroke-width="1.6"/><line x1="1056" y1="510" x2="1056" y2="562" stroke="#3a3a3c" stroke-width="1.6"/><line x1="850" y1="510" x2="850" y2="578" stroke="#4a4a4c" stroke-width="2"/><line x1="1070" y1="510" x2="1070" y2="578" stroke="#4a4a4c" stroke-width="2"/></g><g id="sbbody" stroke="#4a4a4c" stroke-width="2" stroke-linejoin="round"><polygon points="850,578 864,562 1056,562 1070,578" fill="#141416"/><rect x="850" y="578" width="220" height="38" fill="#101011"/></g>
+    <svg class="hero-logo" id="heroLogo" viewBox="546 540 828 350" role="img" aria-label="Apparatus logo lit by a softbox"><defs><linearGradient id="conegrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff0d2" stop-opacity="0.85"/><stop offset="0.75" stop-color="#ffe3b0" stop-opacity="0.22"/><stop offset="1" stop-color="#ffe3b0" stop-opacity="0"/></linearGradient><filter id="conesoft" x="-30%" y="-20%" width="160%" height="150%"><feGaussianBlur stdDeviation="16"/></filter></defs><polygon id="cone" points="884,505 1036,505 1452,880 468,880" fill="url(#conegrad)" filter="url(#conesoft)"/>
       <g id="logopaths">
         <path class="lp" d="M 585.132812 763.734375 L 628.019531 763.734375 L 640.6875 804.90625 Z M 585.132812 763.734375" fill="currentColor" style="transform-box:fill-box;transform-origin:center"/>
         <path class="lp" d="M 645.621094 820.933594 L 560.046875 843.46875 L 581.992188 773.828125 Z M 645.621094 820.933594" fill="currentColor" style="transform-box:fill-box;transform-origin:center"/>
