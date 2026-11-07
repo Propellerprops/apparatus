@@ -143,7 +143,7 @@ document.getElementById('view').onclick=function(){document.getElementById('pane
 document.getElementById('send').onclick=function(){
   var lines=Object.keys(cart).map(function(k){return '- '+cart[k].n+(cart[k].d?' ('+cart[k].d+')':'');});
   var body='Hello Apparatus,%0D%0A%0D%0AWe would like a quote for the following equipment:%0D%0A%0D%0A'+encodeURIComponent(lines.join('\n')).replace(/%0A/g,'%0D%0A')+'%0D%0A%0D%0AShoot dates:%0D%0AProduction:%0D%0A';
-  location.href='mailto:rental@apparatus.ge?subject=Quote request — '+Object.keys(cart).length+' items&body='+body;
+  location.href='mailto:info@apparatus.ge?subject=Quote request — '+Object.keys(cart).length+' items&body='+body;
 };
 
 function fcard(d){
