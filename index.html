@@ -31,13 +31,15 @@
   @media(max-width:640px){header nav{display:none;}}
 
   /* pinned hero: 300vh scroll track, sticky viewport */
-  .hero-track{height:300vh;position:relative;}
-  .hero-pin{position:sticky;top:0;height:100vh;display:flex;flex-direction:column;
-    align-items:center;justify-content:center;overflow:hidden;}
+  .hero{min-height:100vh;display:flex;flex-direction:column;
+    align-items:center;justify-content:center;overflow:hidden;position:relative;}
+  .hero-logo .lp{fill:#101011;transition:fill .55s ease;}
+  .hero-logo .lp.on{fill:#f0f0f0;}
+  @keyframes subIn{to{opacity:1;transform:none;}}
   .hero-logo{width:min(74vw,760px);color:var(--paper);will-change:transform;}
   .hero-logo .lp{will-change:transform,opacity;}
   .hero-sub{margin-top:34px;text-align:center;opacity:0;transform:translateY(24px);
-    will-change:opacity,transform;}
+    animation:subIn .9s ease 2.5s forwards;}
   .hero-sub .eyebrow{color:var(--gold);font-size:12px;letter-spacing:4px;text-transform:uppercase;}
   .hero-sub h1{font-size:clamp(20px,3.4vw,34px);font-weight:400;margin-top:14px;letter-spacing:.5px;}
   .hero-hint{position:absolute;bottom:34px;left:50%;transform:translateX(-50%);
@@ -71,9 +73,9 @@
   footer .flogo{height:26px;color:var(--paper);margin-bottom:18px;}
 
   @media (prefers-reduced-motion: reduce){
-    .hero-track{height:100vh;}
-    .hero-logo .lp{transform:none!important;opacity:1!important;}
-    .hero-sub{opacity:1!important;transform:none!important;}
+    .hero-logo .lp{fill:#f0f0f0!important;transition:none;}
+    #beamg{display:none;}
+    .hero-sub{animation:none;opacity:1;transform:none;}
     .rv{opacity:1;transform:none;transition:none;}
   }
 </style>
@@ -87,9 +89,8 @@
   <nav style="display:flex;align-items:center;"><a href="index.html" style="color:#f0f0f0;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-left:22px;">Home</a><a href="studio.html" style="color:#98958c;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-left:22px;">Studio</a><a href="catalog.html" style="color:#98958c;text-decoration:none;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;margin-left:22px;">Equipment</a></nav>
 </header>
 
-<div class="hero-track" id="track">
-  <div class="hero-pin">
-    <svg class="hero-logo" id="heroLogo" viewBox="546 748 828 120" role="img" aria-label="Apparatus logo">
+<section class="hero">
+    <svg class="hero-logo" id="heroLogo" viewBox="546 748 828 120" role="img" aria-label="Apparatus logo"><defs><filter id="beamblur" x="-120%" y="-500%" width="340%" height="1100%"><feGaussianBlur stdDeviation="20"/></filter><radialGradient id="warm"><stop offset="0" stop-color="#fff3dc"/><stop offset="0.5" stop-color="#ffd9a0" stop-opacity="0.7"/><stop offset="1" stop-color="#ffd9a0" stop-opacity="0"/></radialGradient><mask id="cuts"><rect x="546" y="742" width="828" height="132" fill="white"/><path d="M 585.132812 763.734375 L 628.019531 763.734375 L 640.6875 804.90625 Z M 585.132812 763.734375" fill="black"/><path d="M 645.621094 820.933594 L 560.046875 843.46875 L 581.992188 773.828125 Z M 645.621094 820.933594" fill="black"/><path d="M 648.558594 830.480469 L 656.019531 854.722656 L 556.5 854.722656 Z M 648.558594 830.480469" fill="black"/><path d="M 706.347656 763.734375 C 723.589844 763.734375 737.570312 777.710938 737.570312 794.953125 C 737.570312 812.195312 723.589844 826.171875 706.347656 826.171875" fill="black"/><path d="M 696.308594 763.734375 L 662.582031 763.734375 L 662.582031 826.171875 L 696.308594 826.171875 Z M 696.308594 763.734375" fill="black"/><path d="M 696.304688 854.722656 L 667.753906 854.722656 L 696.304688 826.171875 Z M 696.304688 854.722656" fill="black"/><path d="M 790.386719 763.734375 C 807.625 763.734375 821.605469 777.710938 821.605469 794.953125 C 821.605469 812.195312 807.625 826.171875 790.386719 826.171875" fill="black"/><path d="M 780.34375 832.226562 L 780.34375 763.734375 L 746.617188 763.734375 L 746.617188 764.078125 Z M 780.34375 832.226562" fill="black"/><path d="M 746.617188 854.722656 L 780.34375 854.722656 L 746.617188 786.574219 Z M 746.617188 854.722656" fill="black"/><path d="M 843.921875 763.734375 L 822.671875 832.785156 L 886.769531 763.734375 Z M 843.921875 763.734375" fill="black"/><path d="M 915.441406 854.722656 L 881.71875 854.722656 L 864.953125 801.902344 L 887.96875 777.105469 Z M 915.441406 854.722656" fill="black"/><path d="M 871.25 854.722656 L 857.152344 810.304688 L 815.921875 854.722656 Z M 871.25 854.722656" fill="black"/><path d="M 968.269531 763.734375 C 985.511719 763.734375 999.492188 777.710938 999.492188 794.953125 C 999.492188 812.195312 985.511719 826.171875 968.269531 826.171875" fill="black"/><path d="M 924.570312 854.722656 L 924.570312 763.734375 L 958.292969 763.734375 Z M 924.570312 854.722656" fill="black"/><path d="M 993.742188 854.722656 L 935.210938 854.722656 L 949.59375 815.914062 Z M 993.742188 854.722656" fill="black"/><path d="M 1045.117188 763.734375 L 1076.601562 763.734375 L 1108.808594 854.722656 Z M 1045.117188 763.734375" fill="black"/><path d="M 1037.289062 763.734375 L 1037.289062 854.722656 L 1009.292969 854.722656 Z M 1037.289062 763.734375" fill="black"/><path d="M 1047.265625 784.203125 L 1096.628906 854.726562 L 1047.265625 854.726562 Z M 1047.265625 784.203125" fill="black"/><path d="M 1123.96875 763.734375 L 1183.097656 763.734375 L 1183.097656 797.839844 Z M 1123.96875 763.734375" fill="black"/><path d="M 1103.796875 763.734375 L 1103.796875 797.839844 L 1129.441406 797.839844 L 1162.925781 845.660156 L 1162.925781 797.839844 Z M 1103.796875 763.734375" fill="black"/><path d="M 1157.09375 854.722656 L 1122.703125 854.722656 L 1122.703125 805.613281 Z M 1157.09375 854.722656" fill="black"/><path d="M 1270.476562 794.953125 L 1270.476562 763.171875 L 1238.242188 794.953125 Z M 1270.476562 794.953125" fill="black"/><path d="M 1196.027344 818.484375 L 1196.027344 763.171875 L 1221.128906 787.917969 Z M 1196.027344 818.484375" fill="black"/><path d="M 1196.027344 834.207031 L 1228.261719 856.828125 L 1228.261719 794.953125 Z M 1196.027344 834.207031" fill="black"/><path d="M 1270.476562 794.953125 L 1270.476562 834.207031 L 1238.242188 856.828125 L 1238.242188 794.953125 Z M 1270.476562 794.953125" fill="black"/><path d="M 1362.464844 798.71875 L 1318.941406 763.734375 L 1362.464844 763.734375 Z M 1362.464844 798.71875" fill="black"/><path d="M 1284.359375 794.652344 L 1318.941406 763.734375 L 1318.941406 825.574219 Z M 1284.359375 794.652344" fill="black"/><path d="M 1363.5 823.804688 L 1328.917969 854.726562 L 1328.917969 792.882812 Z M 1363.5 823.804688" fill="black"/><path d="M 1285.394531 819.738281 L 1328.917969 854.722656 L 1285.394531 854.722656 Z M 1285.394531 819.738281" fill="black"/></mask></defs><g id="beamg" mask="url(#cuts)"><ellipse id="beam" cx="420" cy="808" rx="170" ry="110" fill="url(#warm)" filter="url(#beamblur)" opacity="0"/></g>
       <g id="logopaths">
         <path class="lp" d="M 585.132812 763.734375 L 628.019531 763.734375 L 640.6875 804.90625 Z M 585.132812 763.734375" fill="currentColor" style="transform-box:fill-box;transform-origin:center"/>
         <path class="lp" d="M 645.621094 820.933594 L 560.046875 843.46875 L 581.992188 773.828125 Z M 645.621094 820.933594" fill="currentColor" style="transform-box:fill-box;transform-origin:center"/>
@@ -127,8 +128,7 @@
       <h1>Stage, gear and light. Under one roof.</h1>
     </div>
     <div class="hero-hint">Scroll</div>
-  </div>
-</div>
+</section>
 
 <section id="stage">
   <div class="rv">
@@ -181,64 +181,39 @@
 
 <script>
 (function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var shapes = [].slice.call(document.querySelectorAll('#heroLogo .lp'));
-  var n = shapes.length;
-  var meta = shapes.map(function(el,i){
-    var s=Math.sin(i*17.77)*43758.5453; s=s-Math.floor(s);
-    return {blade:el.classList.contains('blade'), ang:(s>0.5?1:-1)*(70+s*50)};
-  });
-  function ease(t){return 1-Math.pow(1-t,3);}
-  function backOut(t){var s=1.35;t=t-1;return 1+(t*t*((s+1)*t+s));}
-  var track=document.getElementById('track'),
-      hdr=document.getElementById('hdr'),
-      logo=document.getElementById('heroLogo'),
-      sub=document.getElementById('heroSub');
-
-  function onScroll(){
-    var r=track.getBoundingClientRect();
-    var total=track.offsetHeight-window.innerHeight;
-    var p=Math.min(1,Math.max(0,-r.top/total));   // 0..1 across the hero track
-
-    if(!reduced){
-      // phase 1 (0 → .55): shapes fly in, staggered left to right
-      var asm=Math.min(1,p/0.55);
-      var span=0.55,dur=1-span;
-      for(var i=0;i<n;i++){
-        var start=(i/(n-1))*span;
-        var t=Math.min(1,Math.max(0,(asm-start)/dur));
-        var m=meta[i];
-        if(m.blade){
-          var e=ease(t);
-          shapes[i].style.transform='rotate('+(-170*(1-e))+'deg)';
-          shapes[i].style.opacity=0.1+0.9*Math.min(1,t*2.5);
-        }else{
-          var e2=backOut(t);
-          shapes[i].style.transform='rotate('+(m.ang*(1-e2))+'deg) scale('+(0.35+0.65*e2)+')';
-          shapes[i].style.opacity=0.05+0.95*Math.min(1,t*2);
-        }
-      }
-      // phase 2 (.55 → .75): tagline rises
-      var t2=Math.min(1,Math.max(0,(p-0.55)/0.2));
-      sub.style.opacity=t2;
-      sub.style.transform='translateY('+(24*(1-ease(t2)))+'px)';
-      // phase 3 (.78 → 1): whole logo eases upward and shrinks as you leave the hero
-      var t3=Math.min(1,Math.max(0,(p-0.78)/0.22));
-      var e3=ease(t3);
-      logo.style.transform='translateY('+(-e3*12)+'vh) scale('+(1-0.28*e3)+')';
-      logo.style.opacity=1-0.35*e3;
+var reduced=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var hdr=document.getElementById('hdr');
+var shapes=[].slice.call(document.querySelectorAll('#heroLogo .lp'));
+var beam=document.getElementById('beam');
+var cxs=shapes.map(function(p){var b=p.getBBox();return b.x+b.width/2;});
+if(reduced||!beam){
+  shapes.forEach(function(p){p.classList.add('on');});
+}else{
+  var t0=null,D=2000,DELAY=400,X0=430,X1=1500;
+  function step(ts){
+    if(!t0)t0=ts;
+    var el=ts-t0-DELAY;
+    if(el<0){requestAnimationFrame(step);return;}
+    var t=Math.min(1,el/D);
+    var e=t<.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+    var x=X0+(X1-X0)*e;
+    beam.setAttribute('cx',x);
+    var op=t<0.1?t/0.1:(t>0.88?(1-t)/0.12:1);
+    beam.setAttribute('opacity',(op*0.95).toFixed(2));
+    for(var i=0;i<shapes.length;i++){
+      if(x>cxs[i]+14&&!shapes[i].classList.contains('on'))shapes[i].classList.add('on');
     }
-    hdr.classList.toggle('solid', p>0.97);
+    if(t<1){requestAnimationFrame(step);}
+    else{shapes.forEach(function(p){p.classList.add('on');});beam.setAttribute('opacity','0');}
   }
-  window.addEventListener('scroll',onScroll,{passive:true});
-  window.addEventListener('resize',onScroll);
-  onScroll();
-
-  // section reveals
-  var io=new IntersectionObserver(function(es){
-    es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('on'); io.unobserve(e.target);} });
-  },{threshold:0.18});
-  document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
+  requestAnimationFrame(step);
+}
+function onScroll(){hdr.classList.toggle('solid', window.scrollY>window.innerHeight*0.55);}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target);}});
+},{threshold:0.18});
+document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 })();
 </script>
 </body>
