@@ -53,6 +53,17 @@
       display:flex;justify-content:center;gap:20px!important;}
     header nav a{font-size:12px!important;letter-spacing:1.2px!important;}
   }
+  .gph{cursor:zoom-in;}
+  #lb{position:fixed;inset:0;background:rgba(8,8,9,.95);z-index:100;display:none;
+      align-items:center;justify-content:center;}
+  #lb.open{display:flex;}
+  #lb img{max-width:94vw;max-height:90vh;display:block;box-shadow:0 20px 80px rgba(0,0,0,.6);}
+  #lb button{position:absolute;background:none;border:none;color:#f0f0f0;font-size:34px;
+      cursor:pointer;padding:18px;opacity:.7;transition:opacity .2s;font-family:inherit;}
+  #lb button:hover{opacity:1;}
+  #lbx{top:10px;right:16px;}
+  #lbp{left:6px;top:50%;transform:translateY(-50%);}
+  #lbn{right:6px;top:50%;transform:translateY(-50%);}
 </style>
 </head>
 <body>
@@ -95,6 +106,12 @@
   <h2>Floor plan</h2>
   <p class="lead">Downloadable tech pack with floor plan, sections and load data — <a href="#" style="color:var(--paper);border-bottom:1px solid var(--red);text-decoration:none;">Apparatus_Stage_TechPack.pdf</a></p>
 </main>
+<div id="lb" role="dialog" aria-label="Photo viewer">
+  <button id="lbx" aria-label="Close">×</button>
+  <button id="lbp" aria-label="Previous">‹</button>
+  <img id="lbimg" alt="Apparatus Studio">
+  <button id="lbn" aria-label="Next">›</button>
+</div>
 <footer>
   <div class="eyebrow" style="margin-bottom:12px;">Book the stage</div>
   <p>Tell us your dates — we reply within 24 hours.<br><a href="mailto:info@apparatus.ge">info@apparatus.ge</a><br><a href="https://wa.me/995555281417" style="color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);">+995 555 28 14 17</a></p>
@@ -112,12 +129,37 @@ var shots=[['exterior-dusk.jpg','wide',''],['set-crane.jpg','',''],['set-tungste
            ['stage-lights.jpg','wide',''],['client.jpeg','',''],['rental.jpeg','wide',''],
            ['pano-2.jpg','pano','']];
 var gal=document.getElementById('gal');
-shots.forEach(function(s){
+shots.forEach(function(s,i){
   var d=document.createElement('div');d.className='gph'+(s[1]?' '+s[1]:'');
   var img=new Image();img.loading='lazy';img.src='photos/'+s[0];img.alt='Apparatus Studio';
   img.onerror=function(){d.innerHTML='<span class="lbl">photos/'+s[0]+'</span>';};
-  d.appendChild(img);gal.appendChild(d);
+  d.appendChild(img);
+  d.addEventListener('click',function(){lbOpen(i);});
+  gal.appendChild(d);
 });
+var lb=document.getElementById('lb'),lbimg=document.getElementById('lbimg'),cur=0;
+function lbShow(){lbimg.src='photos/'+shots[cur][0];}
+function lbOpen(i){cur=i;lbShow();lb.classList.add('open');document.body.style.overflow='hidden';}
+function lbClose(){lb.classList.remove('open');document.body.style.overflow='';}
+function lbStep(d){cur=(cur+d+shots.length)%shots.length;lbShow();}
+document.getElementById('lbx').onclick=lbClose;
+document.getElementById('lbp').onclick=function(e){e.stopPropagation();lbStep(-1);};
+document.getElementById('lbn').onclick=function(e){e.stopPropagation();lbStep(1);};
+lb.addEventListener('click',function(e){if(e.target===lb)lbClose();});
+document.addEventListener('keydown',function(e){
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lbClose();
+  if(e.key==='ArrowLeft')lbStep(-1);
+  if(e.key==='ArrowRight')lbStep(1);
+});
+var tx=null;
+lb.addEventListener('touchstart',function(e){tx=e.touches[0].clientX;},{passive:true});
+lb.addEventListener('touchend',function(e){
+  if(tx===null)return;
+  var dx=e.changedTouches[0].clientX-tx;
+  if(Math.abs(dx)>50)lbStep(dx<0?1:-1);
+  tx=null;
+},{passive:true});
 
 // ---------- 3D wireframe stage (schematic; replaced by real SketchUp export later) ----------
 (function(){
