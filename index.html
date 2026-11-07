@@ -242,7 +242,7 @@ document.querySelectorAll('.rv').forEach(function(el){io.observe(el);});
 
 // Instagram feed via Behold (set BEHOLD_URL to activate the grid)
 (function(){
-var BEHOLD_URL="";
+var BEHOLD_URL="https://feeds.behold.so/LzVQvL91iJWmzgvXyMz3";
 if(!BEHOLD_URL)return;
 fetch(BEHOLD_URL).then(function(r){return r.json();}).then(function(d){
   var posts=(d.posts||d).slice(0,8);
