@@ -28,6 +28,12 @@
   footer{border-top:1px solid var(--line);padding:56px 24px;text-align:center;}
   footer p{color:var(--mute);font-size:14px;line-height:1.7;}
   footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);}
+  @media(max-width:760px){
+    header{flex-wrap:wrap;row-gap:12px;}
+    header nav{position:static!important;transform:none!important;order:3;width:100%;
+      display:flex;justify-content:center;gap:20px!important;}
+    header nav a{font-size:12px!important;letter-spacing:1.2px!important;}
+  }
 </style>
 </head>
 <body>

@@ -28,7 +28,7 @@
   header nav{display:flex;gap:26px;font-size:13px;letter-spacing:1.5px;text-transform:uppercase;}
   header nav a{color:var(--mute);text-decoration:none;transition:color .25s;}
   header nav a:hover{color:var(--paper);}
-  @media(max-width:640px){header nav{display:none;}}
+  
 
   /* pinned hero: 300vh scroll track, sticky viewport */
   .hero{min-height:100vh;display:flex;flex-direction:column;
@@ -83,6 +83,12 @@
     #sbface{transition:none;}
     .hero-sub{animation:none;opacity:1;transform:none;}
     .rv{opacity:1;transform:none;transition:none;}
+  }
+  @media(max-width:760px){
+    header{flex-wrap:wrap;row-gap:12px;}
+    header nav{position:static!important;transform:none!important;order:3;width:100%;
+      display:flex;justify-content:center;gap:20px!important;}
+    header nav a{font-size:12px!important;letter-spacing:1.2px!important;}
   }
 </style>
 </head>

@@ -65,6 +65,12 @@
 .ph{position:relative;}
   .ph img.alt2{position:absolute;inset:0;opacity:0;transition:opacity .3s ease;}
   .fcard:hover .ph img.alt2{opacity:1;}
+  @media(max-width:760px){
+    header{flex-wrap:wrap;row-gap:12px;}
+    header nav{position:static!important;transform:none!important;order:3;width:100%;
+      display:flex;justify-content:center;gap:20px!important;}
+    header nav a{font-size:12px!important;letter-spacing:1.2px!important;}
+  }
 </style>
 </head>
 <body>
