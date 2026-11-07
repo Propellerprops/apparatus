@@ -47,7 +47,7 @@
   .row .add{border:1px solid var(--line);background:none;color:var(--mute);width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:16px;line-height:1;flex:0 0 auto;align-self:center;transition:.2s;}
   .row .add:hover{color:var(--gold);border-color:var(--gold);}
   .row .add.in{color:var(--ink);background:var(--gold);border-color:var(--gold);}
-  @media(max-width:640px){.row{flex-wrap:wrap;}.row .ds{white-space:normal;width:100%;order:3;}}
+  @media(max-width:640px){.row{flex-wrap:wrap;row-gap:4px;}.row .nm{flex:1 1 auto;min-width:0;}.row .qy{flex:0 0 auto;}.row .add{margin-left:auto;}.row .ds{white-space:normal;flex:0 0 100%;order:3;line-height:1.5;}}
 
   button.gold{background:var(--gold);color:#ffffff;border:none;padding:10px 18px;font-size:13px;font-weight:500;border-radius:4px;cursor:pointer;}
   button.ghost{background:none;border:1px solid var(--line);color:var(--paper);padding:9px 18px;font-size:13px;border-radius:4px;cursor:pointer;}
