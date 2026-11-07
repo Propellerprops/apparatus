@@ -36,6 +36,8 @@
   .gph img{width:100%;height:100%;object-fit:cover;display:block;}
   .gph .lbl{color:#3f3f41;font-size:12px;letter-spacing:2px;text-transform:uppercase;}
   .gallery .wide{grid-column:span 2;}
+  .gph.pano{grid-column:1/-1;aspect-ratio:auto;}
+  .gph.pano img{height:auto;}
   @media(max-width:600px){.gallery .wide{grid-column:span 1;}}
 
   ul.spec{list-style:none;max-width:640px;}
@@ -101,9 +103,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
 // ---------- photo gallery: drop files into photos/ next to this file ----------
-var shots=[['set-overhead.jpg','wide',''],['set-crane.jpg','',''],['set-tungsten.jpg','',''],
+var shots=[['exterior-dusk.jpg','wide',''],['set-crane.jpg','',''],['set-tungsten.jpg','',''],
+           ['set-bedroom.jpg','wide',''],['set-overhead.jpg','wide',''],
+           ['gate-light.jpg','',''],['set-dolly.jpg','',''],
+           ['pano-1.jpg','pano',''],
            ['3_studio.jpeg','wide',''],['studio.jpeg','',''],['catering.jpeg','',''],
-           ['1_studio.jpeg','',''],['set-dolly.jpg','',''],['client.jpeg','',''],['rental.jpeg','wide','']];
+           ['1_studio.jpeg','',''],['wall-door.jpg','',''],['catwalk.jpg','',''],
+           ['stage-lights.jpg','wide',''],['client.jpeg','',''],['rental.jpeg','wide',''],
+           ['pano-2.jpg','pano','']];
 var gal=document.getElementById('gal');
 shots.forEach(function(s){
   var d=document.createElement('div');d.className='gph'+(s[1]?' '+s[1]:'');
