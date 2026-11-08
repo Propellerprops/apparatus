@@ -72,8 +72,6 @@
   .rv{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s ease;}
   .rv.on{opacity:1;transform:none;}
 
-  footer{border-top:1px solid var(--line);padding:60px 28px;text-align:center;color:var(--mute);font-size:13px;}
-  footer .flogo{height:26px;color:var(--paper);margin-bottom:18px;}
 
   @media (prefers-reduced-motion: reduce){
     .hero-logo .lp{fill:#f0f0f0!important;transition:none;}
@@ -87,6 +85,11 @@
       display:flex;justify-content:center;gap:20px!important;}
     header nav a{font-size:12px!important;letter-spacing:1.2px!important;}
   }
+  footer{border-top:1px solid var(--line);margin-top:80px;padding:56px 24px 34px;}
+  .fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;}
+  footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);}
+  footer a:hover{color:#fff;}
+  .fbase{max-width:1180px;margin:44px auto 0;color:var(--mute);font-size:12px;letter-spacing:1px;border-top:1px solid var(--line);padding-top:22px;}
 </style>
 </head>
 <body>
@@ -195,9 +198,37 @@
 </section>
 
 <footer>
-  <svg class="flogo" viewBox="546 748 828 120" aria-hidden="true"><use href="#logopaths"/></svg>
-  <div>Apparatus Studio · Tbilisi, Georgia</div>
+  <div class="fgrid">
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Apparatus Studio</div>
+      <p style="color:var(--mute);font-size:14px;line-height:1.7;margin:0;">Georgia's first large private film studio.<br>Tbilisi, Georgia</p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Contact</div>
+      <p style="margin:0;font-size:14px;line-height:2;">
+        <a href="mailto:info@apparatus.ge">info@apparatus.ge</a><br>
+        <a href="https://wa.me/995555281417">+995 555 28 14 17</a>
+      </p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Explore</div>
+      <p style="margin:0;font-size:14px;line-height:2;">
+        <a href="index.html">Home</a><br>
+        <a href="studio.html">Studio</a><br>
+        <a href="catalog.html">Equipment</a><br>
+        <a href="team.html">Team</a>
+      </p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Follow</div>
+      <p style="margin:0;font-size:14px;line-height:2;">
+        <a href="https://www.instagram.com/apparatus.studio/" target="_blank" rel="noopener">Instagram</a>
+      </p>
+    </div>
+  </div>
+  <div class="fbase">© <span id="fyear">2026</span> Apparatus Studio · Tbilisi, Georgia</div>
 </footer>
+<script>document.getElementById('fyear').textContent=new Date().getFullYear();</script>
 
 <script>
 (function(){

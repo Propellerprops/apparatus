@@ -44,9 +44,6 @@
   ul.spec li{display:flex;justify-content:space-between;gap:20px;padding:13px 4px;border-bottom:1px solid #202022;font-size:14px;}
   ul.spec li span{color:var(--mute);}
 
-  footer{border-top:1px solid var(--line);margin-top:80px;padding:56px 24px;text-align:center;}
-  footer p{color:var(--mute);font-size:14px;line-height:1.7;}
-  footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);}
   @media(max-width:760px){
     header{flex-wrap:wrap;row-gap:12px;}
     header nav{position:static!important;transform:none!important;order:3;width:100%;
@@ -64,6 +61,11 @@
   #lbx{top:10px;right:16px;}
   #lbp{left:6px;top:50%;transform:translateY(-50%);}
   #lbn{right:6px;top:50%;transform:translateY(-50%);}
+  footer{border-top:1px solid var(--line);margin-top:80px;padding:56px 24px 34px;}
+  .fgrid{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:30px;}
+  footer a{color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);}
+  footer a:hover{color:#fff;}
+  .fbase{max-width:1180px;margin:44px auto 0;color:var(--mute);font-size:12px;letter-spacing:1px;border-top:1px solid var(--line);padding-top:22px;}
 </style>
 </head>
 <body>
@@ -113,9 +115,37 @@
   <button id="lbn" aria-label="Next">›</button>
 </div>
 <footer>
-  <div class="eyebrow" style="margin-bottom:12px;">Book the stage</div>
-  <p>Tell us your dates — we reply within 24 hours.<br><a href="mailto:info@apparatus.ge">info@apparatus.ge</a><br><a href="https://wa.me/995555281417" style="color:var(--paper);text-decoration:none;border-bottom:1px solid var(--red);">+995 555 28 14 17</a></p>
+  <div class="fgrid">
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Apparatus Studio</div>
+      <p style="color:var(--mute);font-size:14px;line-height:1.7;margin:0;">Georgia's first large private film studio.<br>Tbilisi, Georgia</p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Contact</div>
+      <p style="margin:0;font-size:14px;line-height:2;">
+        <a href="mailto:info@apparatus.ge">info@apparatus.ge</a><br>
+        <a href="https://wa.me/995555281417">+995 555 28 14 17</a>
+      </p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Explore</div>
+      <p style="margin:0;font-size:14px;line-height:2;">
+        <a href="index.html">Home</a><br>
+        <a href="studio.html">Studio</a><br>
+        <a href="catalog.html">Equipment</a><br>
+        <a href="team.html">Team</a>
+      </p>
+    </div>
+    <div>
+      <div class="eyebrow" style="margin-bottom:12px;">Follow</div>
+      <p style="margin:0;font-size:14px;line-height:2;">
+        <a href="https://www.instagram.com/apparatus.studio/" target="_blank" rel="noopener">Instagram</a>
+      </p>
+    </div>
+  </div>
+  <div class="fbase">© <span id="fyear">2026</span> Apparatus Studio · Tbilisi, Georgia</div>
 </footer>
+<script>document.getElementById('fyear').textContent=new Date().getFullYear();</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script>
